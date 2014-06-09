@@ -8,8 +8,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class Menu extends ListActivity {
-	String classes[] = { "startingPoint", "example1", "example2",
-		"example3", "example4", "example5", "example6" };
+	String classes[] = { "StartingPoint", "TextPlay", "example2",
+			"example3", "example4", "example5", "example6" };
+/*	String classes[] = { "startingPoint", "TextPlay", "example2",
+			"example3", "example4", "example5", "example6" };*/
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +29,10 @@ public class Menu extends ListActivity {
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		// TODO Auto-generated method stub
 		String cheese = classes[position];
+		String lookFor = "com.thenewboston.travis."+cheese;
 		super.onListItemClick(l, v, position, id);
 		try{
-			Class ourClass = Class.forName("com.thenewboston.travis."+cheese);
+			Class ourClass = Class.forName(lookFor);
 			Intent ourIntent = new Intent(Menu.this, ourClass);
 			startActivity(ourIntent);
 		}catch(ClassNotFoundException e){
