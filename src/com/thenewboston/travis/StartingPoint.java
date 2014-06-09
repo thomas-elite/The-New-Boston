@@ -16,8 +16,7 @@ import android.os.Build;
 public class StartingPoint extends ActionBarActivity {
 
 	int counter;
-	Button add;
-	Button sub;
+	Button add, sub;
 	TextView display;
 	
     @Override
@@ -29,24 +28,25 @@ public class StartingPoint extends ActionBarActivity {
         add = (Button)findViewById(R.id.bAdd);
         sub = (Button)findViewById(R.id.bSubtract);
         display = (TextView)findViewById(R.id.tvDisplay);
-        add.setOnClickListener(new View.OnClickListener() {
+        /*!!... need to remark, will crash, need solution
+        add.setOnClickListener(new Button.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				counter += 1;
+				counter ++;
 				display.setText("Your total is " + counter);
 			}
 		});
-    	sub.setOnClickListener(new View.OnClickListener() {
+    	sub.setOnClickListener(new Button.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				counter -= 1;
+				counter --;
 				display.setText("Your total is " + counter);
 			}
-		});
+		});*/
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
